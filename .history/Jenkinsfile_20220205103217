@@ -1,0 +1,41 @@
+// Declarative //
+pipeline {
+
+    node {
+    checkout scm 
+    /* .. snip .. */
+    }
+    agent {
+        docker { image 'python:alpine3.15'}
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                sh ''
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
+// Script //
+node {
+    stage('Build') {
+        echo 'Building....'
+    }
+    stage('Test') {
+        echo 'Building....'
+    }
+    stage('Deploy') {
+        echo 'Deploying....'
+    }
+}

@@ -1,0 +1,24 @@
+FROM ubuntu:latest
+RUN apt update -y  && apt upgrade -y 
+RUN mkdir flask_tutorial
+
+#VOLUME /flask_tutorial/
+WORKDIR /flask_tutorial/
+
+
+#add can use urls
+ADD https://github.com/PandaJoey/flask-cicd-first-try /flask_tutoial/
+
+RUN cd flask_tutoial/
+
+EXPOSE 5000:80/udp
+EXPOSE 5000:80/tcp
+
+ENV myenv="placeholder"
+
+#exec
+ENTRYPOINT ["executable", "param1", "param2"]
+
+#shell
+#ENTRYPOINT command param1 param2
+CMD ["flask run", "src/index.js"]

@@ -1,0 +1,37 @@
+FROM ubuntu:latest
+RUN apt-get update -y  && apt-get upgrade -y
+RUN apt-get install git -y
+RUN mkdir flask_tutorial
+
+#VOLUME /flask_tutorial/
+WORKDIR /flask_tutorial/
+
+
+#add can use urls
+RUN cd /flask_tutorial
+RUN git clone https://github.com/PandaJoey/flask-cicd-first-try
+RUN cd flask_tutorial/flask-cicd-first-try || exit
+
+RUN apt-get install python3.9-venv -y
+RUN apt-get install python3-flask -y
+RUN apt-get install python3.8-venv -y
+RUN apt-get install pip -y
+RUN pip install Flask
+RUN python3 -m venv venv
+RUN . venv/bin/activate
+RUN export FLASK_APP=flaskr
+RUN export FLASK_ENV=development
+RUN flask init-db
+
+
+EXPOSE 5000/udp
+EXPOSE 5000/tcp
+
+ENV myenv="placeholder"
+
+#exec
+#ENTRYPOINT ["executable", "param1", "param2"]
+
+#shell
+#ENTRYPOINT command param1 param2
+CMD ["flask run", "/flask_tutorial"]
