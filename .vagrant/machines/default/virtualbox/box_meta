@@ -1,1 +1,1 @@
-{"name":"ubuntu/trusty64","version":"20190514.0.0","provider":"virtualbox","directory":"boxes/ubuntu-VAGRANTSLASH-trusty64/20190514.0.0/virtualbox"}
+{"name":"williamyeh/ubuntu-trusty64-docker","version":"1.12.1.20160830","provider":"virtualbox","directory":"boxes/williamyeh-VAGRANTSLASH-ubuntu-trusty64-docker/1.12.1.20160830/virtualbox"}
