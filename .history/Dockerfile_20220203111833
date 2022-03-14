@@ -1,7 +1,0 @@
-# syntax=docker/dockerfile:1
-FROM ubuntu:latest
-RUN apt update -y  && apt upgrade -y 
-WORKDIR /flask_tutorial
-COPY . .
-RUN yarn install --production
-CMD ["node", "src/index.js"]

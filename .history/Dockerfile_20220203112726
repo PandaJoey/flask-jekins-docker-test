@@ -1,8 +1,0 @@
-FROM ubuntu:latest
-RUN apt update -y  && apt upgrade -y 
-WORKDIR /flask_tutorial
-COPY . .
-RUN yarn install --production
-EXPOSE 5000:80/udp
-EXPOSE 5000:80/tcp
-CMD ["node", "src/index.js"]

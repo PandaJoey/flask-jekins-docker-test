@@ -1,5 +1,5 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box="ubuntu:latest"
   config.vm.provider "docker" do |d|
     d.ports = ["5000:5000"]
     d.name = "flask-ubuntu"
